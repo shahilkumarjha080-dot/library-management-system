@@ -1,8 +1,99 @@
-body { font-family: Arial, sans-serif; background: #f4f4f4; }
-.container { max-width: 400px; margin: 60px auto; background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
-h2 { text-align: center; }
-label { display: block; margin-top: 15px; }
-input[type="text"], input[type="password"] { width: 100%; padding: 8px; margin-top: 5px; border: 1px solid #ccc; border-radius: 4px; }
-button { width: 100%; padding: 10px; margin-top: 20px; background: #007bff; color: #fff; border: none; border-radius: 4px; cursor: pointer; }
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body { font-family: Arial, sans-serif; background: #f0f2f5; color: #333; }
+
+/* ---- Login Page ---- */
+.container {
+    max-width: 420px;
+    margin: 80px auto;
+    background: #fff;
+    padding: 36px;
+    border-radius: 10px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+}
+.container h2 { text-align: center; margin-bottom: 24px; color: #1a1a2e; }
+label { display: block; margin-top: 16px; font-size: 14px; font-weight: 600; }
+input[type="text"], input[type="password"] {
+    width: 100%; padding: 10px 12px; margin-top: 6px;
+    border: 1px solid #ccc; border-radius: 6px; font-size: 14px;
+}
+input:focus { outline: none; border-color: #007bff; box-shadow: 0 0 0 2px rgba(0,123,255,.2); }
+button {
+    width: 100%; padding: 11px; margin-top: 22px;
+    background: #007bff; color: #fff; border: none;
+    border-radius: 6px; font-size: 15px; cursor: pointer; transition: background .2s;
+}
 button:hover { background: #0056b3; }
-.error { color: red; margin-top: 10px; text-align: center; }
+.error { color: #dc3545; margin-top: 12px; text-align: center; font-size: 14px; }
+.success { color: #28a745; margin-top: 8px; font-size: 14px; }
+
+/* ---- Dashboard ---- */
+.dash-wrapper { max-width: 1100px; margin: 0 auto; padding: 20px 16px; }
+
+.dash-header {
+    display: flex; justify-content: space-between; align-items: center;
+    background: #fff; padding: 16px 24px;
+    border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    margin-bottom: 24px;
+}
+.dash-header h2 { font-size: 20px; color: #1a1a2e; }
+.dash-header button {
+    width: auto; padding: 8px 20px; margin: 0;
+    font-size: 14px; background: #dc3545;
+}
+.dash-header button:hover { background: #b02a37; }
+
+.dash-body { display: flex; flex-direction: column; gap: 24px; }
+
+.card {
+    background: #fff; border-radius: 10px;
+    padding: 24px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+.card h3 { margin-bottom: 18px; font-size: 17px; color: #1a1a2e; }
+
+.field-row { display: flex; gap: 16px; margin-bottom: 12px; }
+.field { flex: 1; display: flex; flex-direction: column; }
+.field label { font-size: 13px; font-weight: 600; margin-bottom: 5px; }
+.field input, .field select {
+    padding: 9px 12px; border: 1px solid #ccc;
+    border-radius: 6px; font-size: 14px;
+}
+.field input:focus, .field select:focus {
+    outline: none; border-color: #007bff;
+    box-shadow: 0 0 0 2px rgba(0,123,255,.2);
+}
+
+.form-actions { display: flex; gap: 12px; margin-top: 16px; }
+.form-actions button { width: auto; padding: 10px 24px; margin: 0; font-size: 14px; }
+.btn-secondary { background: #6c757d !important; }
+.btn-secondary:hover { background: #545b62 !important; }
+
+/* Table */
+table { width: 100%; border-collapse: collapse; font-size: 14px; }
+table th { background: #f8f9fa; padding: 12px 14px; text-align: left; font-weight: 700; border-bottom: 2px solid #dee2e6; }
+table td { padding: 11px 14px; border-bottom: 1px solid #f0f0f0; vertical-align: middle; }
+table tr:hover td { background: #f8f9fb; }
+
+.badge {
+    display: inline-block; padding: 3px 10px;
+    border-radius: 12px; font-size: 12px; font-weight: 600;
+}
+.avail { background: #d4edda; color: #155724; }
+.unavail { background: #f8d7da; color: #721c24; }
+
+.actions { white-space: nowrap; }
+.btn-edit, .btn-delete {
+    padding: 5px 12px; border: none; border-radius: 4px;
+    cursor: pointer; font-size: 13px; transition: background .2s;
+}
+.btn-edit { background: #ffc107; color: #333; margin-right: 6px; }
+.btn-edit:hover { background: #e0a800; }
+.btn-delete { background: #dc3545; color: #fff; }
+.btn-delete:hover { background: #b02a37; }
+
+.loading, .no-data { color: #888; padding: 20px 0; }
+
+@media (max-width: 600px) {
+    .field-row { flex-direction: column; }
+    table { font-size: 12px; }
+}
