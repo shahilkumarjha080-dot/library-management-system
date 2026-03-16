@@ -1,3 +1,4 @@
 djangorestframework
 Django>=4.2
 PyJWT
+djangorestframework-simplejwt
